@@ -4,9 +4,9 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="5944A853-FA69-40A6-88AF-5E1A38622D2A">
-        <meta name="created" content="2026-02-14T14:07:02+0100">
-        <meta name="modified" content="2026-02-14T14:07:06+0100">
+        <meta name="bear-note-unique-identifier" content="CBBFC775-4E07-4BC6-AB9E-6A53A6CF2DA4">
+        <meta name="created" content="2026-02-14T14:11:07+0100">
+        <meta name="modified" content="2026-02-14T14:11:10+0100">
         <meta name="tags" content="">
         <meta name="last device" content="iPhone">
         
@@ -158,145 +158,62 @@
 <br>
 <style>
 body {
-    margin: 0;
-    background: linear-gradient(to bottom, #ffe6ef, #ffd6e8);
+    margin:0;
     font-family: Arial, sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-.container {
-    padding: 40px 20px;
-}
-
-h1 {
-    font-size: 38px;
-    color: #d6336c;
-    margin-bottom: 40px;
-}
-
-h2 {
-    font-size: 28px;
-    color: #d6336c;
+    background:#ffe6ef;
+    text-align:center;
+    padding:40px 20px;
 }
 
 button {
-    padding: 15px 40px;
-    font-size: 22px;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: 0.3s;
+    padding:15px 40px;
+    font-size:22px;
+    border:none;
+    border-radius:40px;
+    margin:15px;
+    cursor:pointer;
 }
 
-#nextBtn {
-    background: #ff4d6d;
-    color: white;
-}
+#yes { background:#ff4d6d; color:white; }
+#no { background:#6c757d; color:white; }
 
-.choice-btn {
-    width: 70%;
-    max-width: 260px;
-    margin: 15px auto;
-    display: block;
-}
-
-#yes {
-    background: #ff4d6d;
-    color: white;
-}
-
-#no {
-    background: #6c757d;
-    color: white;
-    position: relative;
-}
-
-.screen {
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-#finalScreen img {
-    width: 260px;
-    border-radius: 20px;
-    margin-top: 20px;
-}
-
-#hearts {
-    font-size: 30px;
-    margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.show-hearts {
-    opacity: 1;
-}
 </style>
 </head>
-<br>
 <body>
 <br>
-<div class="container">
-<br>
 <p><h1>Per Delia 🎀</h1></p><br>
-<!-- SCHERMATA 1 -->
-<div id="startScreen" class="screen active">
-    <button id="nextBtn">Avanti ➜</button>
+<div id="start">
+    <button onclick="next()">Avanti ➜</button>
 </div>
 <br>
-<!-- SCHERMATA 2 -->
-<div id="questionScreen" class="screen">
+<div id="question" hidden>
     <h2>Would you be my Valentine? 💌</h2>
+    <button id="yes" onclick="yes()">Sì 🧡</button>
+    <button id="no" onmouseover="move()" ontouchstart="move()">No 💔</button>
+</div>
 <br>
-<p><button class="choice-btn" id="yes">Sì 🧡</button><br>
-<button class="choice-btn" id="no">No 💔</button></p><br>
-<p><div id="hearts">❤️🧡💗💖💕</div></p></div>
-<br>
-<!-- SCHERMATA FINALE -->
-<div id="finalScreen" class="screen">
-    <p style="font-size:26px; color:#d6336c;">
+<div id="final" hidden>
+    <p style="font-size:24px;color:#d6336c;">
         Smack stupenda 🧡🌷 mi manchi già
     </p>
-    <img src="https://i.imgur.com/LVU5ZNN.gif">
-</div>
-<br>
 </div>
 <br>
 <script>
-const startScreen = document.getElementById("startScreen");
-const questionScreen = document.getElementById("questionScreen");
-const finalScreen = document.getElementById("finalScreen");
-const yesBtn = document.getElementById("yes");
-const noBtn = document.getElementById("no");
-const hearts = document.getElementById("hearts");
+function next(){
+    document.getElementById("start").hidden = true;
+    document.getElementById("question").hidden = false;
+}
 
-document.getElementById("nextBtn").addEventListener("click", () => {
-    startScreen.classList.remove("active");
-    questionScreen.classList.add("active");
-});
+function yes(){
+    document.getElementById("question").hidden = true;
+    document.getElementById("final").hidden = false;
+}
 
-yesBtn.addEventListener("click", () => {
-    hearts.classList.add("show-hearts");
-
-    setTimeout(() => {
-        questionScreen.classList.remove("active");
-        finalScreen.classList.add("active");
-    }, 800);
-});
-
-// Pulsante NO che scappa su mobile
-noBtn.addEventListener("touchstart", moveButton);
-noBtn.addEventListener("mouseover", moveButton);
-
-function moveButton() {
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 200 - 100;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+function move(){
+    const btn = document.getElementById("no");
+    btn.style.position = "relative";
+    btn.style.left = (Math.random()*200-100)+"px";
+    btn.style.top = (Math.random()*200-100)+"px";
 }
 </script>
 <br>
