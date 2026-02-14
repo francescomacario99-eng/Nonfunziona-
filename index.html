@@ -4,10 +4,10 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="8F065490-4FFD-4C8C-85AA-4FDE5450D590">
-        <meta name="created" content="2026-02-14T13:29:14+0100">
-        <meta name="modified" content="2026-02-14T13:29:20+0100">
-        <meta name="tags" content="messageContainer, letterContainer, noBtn, valentineContainer, yesBtn">
+        <meta name="bear-note-unique-identifier" content="0A51FF6D-683F-4091-88D0-79B480D27F09">
+        <meta name="created" content="2026-02-14T13:32:50+0100">
+        <meta name="modified" content="2026-02-14T13:32:55+0100">
+        <meta name="tags" content="letterContainer, noBtn, valentineContainer, yesBtn">
         <meta name="last device" content="iPhone">
         
         <script id="MathJax-script" async
@@ -157,22 +157,24 @@
 <style>
 body {
     margin: 0;
+    background: linear-gradient(135deg, #ffd6e0, #ffe6eb);
     font-family: Arial, sans-serif;
     text-align: center;
-    background: linear-gradient(135deg, #ffd6e0, #ffe6eb);
-    overflow: hidden;
-    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 <br>
-<p>/* LETTERA */<br>
+<p>/* Contenitore lettera */<br>
 <span class='hashtag'><span class='hashtag-marker marker'>#</span>letterContainer</span> {<br>
-margin-top: 150px;<br>
 cursor: pointer;<br>
+transition: opacity 0.5s ease;<br>
 }</p><br>
-<p>.letter {<br>
-width: 250px;<br>
-height: 150px;<br>
-margin: 0 auto;<br>
+<p>/* Lettera */<br>
+.letter {<br>
+width: 260px;<br>
+height: 160px;<br>
 background: <span class='color' style='--data-color:#fff0e6'><span class='color-marker marker'>#</span>fff0e6</span>;<br>
 border: 2px solid <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
 border-radius: 15px;<br>
@@ -183,82 +185,30 @@ font-style: italic;<br>
 font-size: 28px;<br>
 color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
 box-shadow: 0 5px 15px <span class='color' style='--data-color:#rgba(0,0,0,0.2)'><span class='color-marker marker'>#</span>rgba(0,0,0,0.2)</span>;<br>
-transition: transform 0.5s;<br>
+transition: transform 0.6s ease;<br>
 }</p><br>
-<p>/* LETTERA APERTA */<br>
-.letter.opened {<br>
-transform: rotateX(180deg);<br>
+<p>/* Animazione apertura */<br>
+.letter.open {<br>
+transform: scale(1.15) rotate(3deg);<br>
 }</p><br>
-<p>/* MESSAGGIO */<br>
+<p>/* Schermata Valentine */<br>
 <span class='hashtag'><span class='hashtag-marker marker'>#</span>valentineContainer</span> {<br>
 display: none;<br>
-margin-top: 50px;<br>
 }</p><br>
 <p>h1 {<br>
-font-size: 38px;<br>
+font-size: 34px;<br>
 color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
 }</p><br>
 <p>button {<br>
-padding: 20px 45px;<br>
-font-size: 24px;<br>
-margin: 25px;<br>
+padding: 18px 40px;<br>
+font-size: 22px;<br>
 border: none;<br>
 border-radius: 40px;<br>
+margin: 20px;<br>
 cursor: pointer;<br>
-transition: all 0.3s ease;<br>
 }</p><br>
-<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>yesBtn</span> { background-color: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>; color: white; }<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>noBtn</span> { background-color: <span class='color' style='--data-color:#6c757d'><span class='color-marker marker'>#</span>6c757d</span>; color: white; }</p><br>
-<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>messageContainer</span> {<br>
-margin-top: 30px;<br>
-font-size: 32px;<br>
-color: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
-}</p><br>
-<p>img.valentine-gif {<br>
-width: 300px;<br>
-margin-top: 20px;<br>
-border-radius: 20px;<br>
-}</p><br>
-<p>/* Cuori */<br>
-.heart {<br>
-position: absolute;<br>
-font-size: 25px;<br>
-pointer-events: none;<br>
-}</p><br>
-<p>/* Glitter */<br>
-.glitter {<br>
-position: absolute;<br>
-width: 6px;<br>
-height: 6px;<br>
-background: radial-gradient(circle, white, gold);<br>
-border-radius: 50%;<br>
-opacity: 0.9;<br>
-pointer-events: none;<br>
-}</p><br>
-<p>/* SHAKE pulsante NO */<br>
-@keyframes shake {<br>
-0% { transform: translateX(0); }<br>
-20% { transform: translateX(-8px); }<br>
-40% { transform: translateX(8px); }<br>
-60% { transform: translateX(-6px); }<br>
-80% { transform: translateX(6px); }<br>
-100% { transform: translateX(0); }<br>
-}</p><br>
-<p>.shake {<br>
-animation: shake 0.4s ease;<br>
-}</p><br>
-<p>/* SCHERMO CHE TREMA */<br>
-@keyframes screenShake {<br>
-0% { transform: translate(0, 0); }<br>
-20% { transform: translate(-10px, 5px); }<br>
-40% { transform: translate(10px, -5px); }<br>
-60% { transform: translate(-8px, 4px); }<br>
-80% { transform: translate(8px, -4px); }<br>
-100% { transform: translate(0, 0); }<br>
-}</p><br>
-<p>.screen-shake {<br>
-animation: screenShake 0.4s ease;<br>
-}<br>
+<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>yesBtn</span> { background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>; color: white; }<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>noBtn</span> { background: <span class='color' style='--data-color:#6c757d'><span class='color-marker marker'>#</span>6c757d</span>; color: white; }<br>
 </style></p></head>
 <body>
 <br>
@@ -267,190 +217,31 @@ animation: screenShake 0.4s ease;<br>
     <div class="letter"><i>Per Delia</i></div>
 </div>
 <br>
-<!-- MESSAGGIO VALENTINE -->
+<!-- SCHERMATA SUCCESSIVA -->
 <div id="valentineContainer">
     <h1>Would you be my Valentine? 💌</h1>
     <button id="yesBtn">Yes 🧡</button>
     <button id="noBtn">No 💔</button>
-    <div id="messageContainer"></div>
 </div>
 <br>
-<!-- Audio -->
-<p><audio id="popSound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio></p><br>
 <script>
-// Selettori
-const letter = document.querySelector('.letter');
-const letterContainer = document.getElementById('letterContainer');
-const valentineContainer = document.getElementById('valentineContainer');
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const messageContainer = document.getElementById("messageContainer");
-const popSound = document.getElementById("popSound");
+const letter = document.querySelector(".letter");
+const letterContainer = document.getElementById("letterContainer");
+const valentineContainer = document.getElementById("valentineContainer");
 
-let noClicks = 0;
-let heartsInterval = null;
-let glitterInterval = null;
-
-// LETTERA: clic per aprire
+// Apertura lettera
 letterContainer.addEventListener("click", () => {
-    letter.classList.add("opened");
+    letter.classList.add("open");
+
+    setTimeout(() => {
+        letterContainer.style.opacity = "0";
+    }, 400);
+
     setTimeout(() => {
         letterContainer.style.display = "none";
         valentineContainer.style.display = "block";
-    }, 500);
+    }, 900);
 });
-
-// PULSANTE NO
-noBtn.addEventListener("click", () => {
-    noClicks++;
-
-    // Shake pulsante
-    noBtn.classList.add("shake");
-    setTimeout(() => noBtn.classList.remove("shake"), 400);
-
-    // Shake schermo
-    document.body.classList.add("screen-shake");
-    setTimeout(() => document.body.classList.remove("screen-shake"), 400);
-
-    // Cresce YES e rimpicciolisce NO
-    yesBtn.style.transform = `scale(${1 + noClicks * 0.25})`;
-    noBtn.style.transform = `scale(${Math.max(0.4, 1 - noClicks * 0.15)})`;
-
-    // Dopo 5 click sparisce
-    if (noClicks >= 5) {
-        noBtn.style.display = "none";
-    }
-});
-
-// PULSANTE YES
-yesBtn.addEventListener("click", () => {
-    popSound.currentTime = 0;
-    popSound.play();
-
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-
-    messageContainer.innerHTML = `
-        <div>Smack Stupenda 🧡🪩🌷 mi manchi già</div>
-        <img src="https://i.imgur.com/LVU5ZNN.gif" alt="Valentine GIF" class="valentine-gif">
-    `;
-
-    startHearts();
-    explodeHearts();
-    startGlitterRain();
-});
-
-// CUORI CHE SALGONO (continui)
-function startHearts() {
-    if (heartsInterval) return;
-    heartsInterval = setInterval(() => {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.textContent = "❤️";
-
-        heart.style.left = Math.random() * window.innerWidth + "px";
-        heart.style.top = window.innerHeight + "px";
-
-        heart.style.color = Math.random() < 0.5 ? "#00BFFF" : "#FFA500";
-        heart.style.fontSize = (20 + Math.random() * 20) + "px";
-
-        document.body.appendChild(heart);
-
-        let pos = window.innerHeight;
-        const amplitude = 50 + Math.random() * 30;
-        const speed = 2 + Math.random() * 2;
-        const baseLeft = parseFloat(heart.style.left);
-
-        function float() {
-            pos -= speed;
-            heart.style.top = pos + "px";
-            heart.style.left = baseLeft + Math.sin(pos / 50) * amplitude / 2 + "px";
-            if (pos > -50) {
-                requestAnimationFrame(float);
-            } else {
-                heart.remove();
-            }
-        }
-
-        requestAnimationFrame(float);
-    }, 250);
-}
-
-// CUORI ESPLOSIVI (una volta)
-function explodeHearts() {
-    const colors = ["💙", "🧡"];
-    for (let i = 0; i < 40; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.textContent = colors[Math.floor(Math.random() * colors.length)];
-
-        let x = window.innerWidth / 2;
-        let y = window.innerHeight / 2;
-
-        heart.style.left = x + "px";
-        heart.style.top = y + "px";
-        heart.style.fontSize = (20 + Math.random() * 25) + "px";
-
-        document.body.appendChild(heart);
-
-        const angle = Math.random() * 2 * Math.PI;
-        const distance = 150 + Math.random() * 150;
-        const speed = 3 + Math.random() * 3;
-        let traveled = 0;
-
-        function boom() {
-            const dx = Math.cos(angle) * speed;
-            const dy = Math.sin(angle) * speed;
-            x += dx;
-            y += dy;
-            traveled += Math.sqrt(dx*dx + dy*dy);
-
-            heart.style.left = x + "px";
-            heart.style.top = y + "px";
-
-            if (traveled < distance) {
-                requestAnimationFrame(boom);
-            } else {
-                heart.remove();
-            }
-        }
-
-        requestAnimationFrame(boom);
-    }
-}
-
-// GLITTER CHE CADONO (continui)
-function startGlitterRain() {
-    if (glitterInterval) return;
-    glitterInterval = setInterval(() => {
-        const glitter = document.createElement("div");
-        glitter.className = "glitter";
-
-        glitter.style.left = Math.random() * window.innerWidth + "px";
-        glitter.style.top = "-10px";
-
-        glitter.style.opacity = (0.4 + Math.random() * 0.6).toString();
-        glitter.style.transform = `scale(${0.5 + Math.random()})`;
-
-        document.body.appendChild(glitter);
-
-        let pos = -10;
-        const speed = 2 + Math.random() * 3;
-
-        function fall() {
-            pos += speed;
-            glitter.style.top = pos + "px";
-
-            if (pos < window.innerHeight + 20) {
-                requestAnimationFrame(fall);
-            } else {
-                glitter.remove();
-            }
-        }
-
-        requestAnimationFrame(fall);
-    }, 120);
-}
 </script>
 <br>
 </body>
