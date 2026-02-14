@@ -4,10 +4,10 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="3C5859A3-07AB-4A58-BCC5-71C2B42196C5">
-        <meta name="created" content="2026-02-14T13:56:51+0100">
-        <meta name="modified" content="2026-02-14T13:56:54+0100">
-        <meta name="tags" content="hearts, no, yes, valentine, finalMessage">
+        <meta name="bear-note-unique-identifier" content="DF04AFBF-8672-4F45-B0E9-73D0473B1C82">
+        <meta name="created" content="2026-02-14T13:59:28+0100">
+        <meta name="modified" content="2026-02-14T13:59:33+0100">
+        <meta name="tags" content="hearts, finalScreen, no, questionScreen, yes, startScreen">
         <meta name="last device" content="iPhone">
         
         <script id="MathJax-script" async
@@ -172,8 +172,8 @@ margin-bottom: 50px;<br>
 }</p><br>
 <p>/* Pulsante avanti */<br>
 button {<br>
-padding: 15px 40px;<br>
-font-size: 22px;<br>
+padding: 16px 45px;<br>
+font-size: 24px;<br>
 border: none;<br>
 border-radius: 40px;<br>
 background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
@@ -181,24 +181,24 @@ color: white;<br>
 cursor: pointer;<br>
 margin-top: 20px;<br>
 }</p><br>
-<p>/* Contenitore Valentine */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>valentine</span> {<br>
+<p>/* Schermate */<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>startScreen</span>,<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>questionScreen</span>,<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>finalScreen</span> {<br>
 display: none;<br>
 }</p><br>
-<p>/* Testo domanda */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>valentine</span> h2 {<br>
-font-size: 32px;<br>
-color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
-margin-bottom: 40px;<br>
-}</p><br>
-<p>/* Pulsanti SI / NO */<br>
+<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>startScreen</span> { display: block; }</p><br>
+<p>/* Pulsanti Sì/No */<br>
 .choice-btn {<br>
-padding: 18px 45px;<br>
-font-size: 24px;<br>
+width: 70%;<br>
+max-width: 260px;<br>
+padding: 18px 0;<br>
+font-size: 26px;<br>
 border: none;<br>
 border-radius: 50px;<br>
-margin: 15px;<br>
+margin: 15px auto;<br>
 cursor: pointer;<br>
+display: block;<br>
 }</p><br>
 <p><span class='hashtag'><span class='hashtag-marker marker'>#</span>yes</span> { background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>; color: white; }<br>
 <span class='hashtag'><span class='hashtag-marker marker'>#</span>no</span> { background: <span class='color' style='--data-color:#6c757d'><span class='color-marker marker'>#</span>6c757d</span>; color: white; }</p><br>
@@ -206,56 +206,46 @@ cursor: pointer;<br>
 <span class='hashtag'><span class='hashtag-marker marker'>#</span>hearts</span> {<br>
 margin-top: 40px;<br>
 font-size: 36px;<br>
-}</p><br>
-<p>/* Messaggio finale */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>finalMessage</span> {<br>
-display: none;<br>
-margin-top: 40px;<br>
-font-size: 28px;<br>
-color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
 }<br>
 </style></p></head>
 <body>
 <br>
 <p><h1>Per Delia 🎀</h1></p><br>
 <!-- SCHERMATA 1 -->
-<div id="start">
+<div id="startScreen">
     <button id="nextBtn">Avanti ➜</button>
 </div>
 <br>
 <!-- SCHERMATA 2 -->
-<div id="valentine">
-    <h2>Would you be my Valentine? 💌</h2>
+<div id="questionScreen">
+    <h2 style="font-size:32px; color:#d6336c;">Would you be my Valentine? 💌</h2>
 <br>
 <p><button class="choice-btn" id="yes">Sì 🧡</button><br>
 <button class="choice-btn" id="no">No 💔</button></p><br>
 <p><div id="hearts">❤️🧡💗💖💕</div></p></div>
 <br>
-<!-- MESSAGGIO FINALE -->
-<div id="finalMessage">
-    <p>Smack stupenda 🧡🌷 mi manchi già</p>
+<!-- SCHERMATA FINALE -->
+<div id="finalScreen">
+    <p style="font-size:28px; color:#d6336c;">Smack stupenda 🧡🌷 mi manchi già</p>
     <img src="https://i.imgur.com/LVU5ZNN.gif" style="width:260px; border-radius:20px; margin-top:20px;">
 </div>
 <br>
 <script>
-const nextBtn = document.getElementById("nextBtn");
-const start = document.getElementById("start");
-const valentine = document.getElementById("valentine");
-const yesBtn = document.getElementById("yes");
-const noBtn = document.getElementById("no");
-const finalMessage = document.getElementById("finalMessage");
+const startScreen = document.getElementById("startScreen");
+const questionScreen = document.getElementById("questionScreen");
+const finalScreen = document.getElementById("finalScreen");
 
-nextBtn.addEventListener("click", () => {
-    start.style.display = "none";
-    valentine.style.display = "block";
+document.getElementById("nextBtn").addEventListener("click", () => {
+    startScreen.style.display = "none";
+    questionScreen.style.display = "block";
 });
 
-yesBtn.addEventListener("click", () => {
-    valentine.style.display = "none";
-    finalMessage.style.display = "block";
+document.getElementById("yes").addEventListener("click", () => {
+    questionScreen.style.display = "none";
+    finalScreen.style.display = "block";
 });
 
-noBtn.addEventListener("click", () => {
+document.getElementById("no").addEventListener("click", () => {
     alert("Oh no 💔");
 });
 </script>
