@@ -4,10 +4,10 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="D8D6AA28-6D9D-4F9A-A1AB-5A59D3FD190B">
-        <meta name="created" content="2026-02-14T13:42:08+0100">
-        <meta name="modified" content="2026-02-14T13:42:13+0100">
-        <meta name="tags" content="letterContainer, valentineContainer">
+        <meta name="bear-note-unique-identifier" content="41275986-0E47-4CC4-8A66-E15EEB45781A">
+        <meta name="created" content="2026-02-14T13:44:53+0100">
+        <meta name="modified" content="2026-02-14T13:44:59+0100">
+        <meta name="tags" content="startScreen, letterContainer, valentineContainer">
         <meta name="last device" content="iPhone">
         
         <script id="MathJax-script" async
@@ -153,7 +153,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>TEST LETTERA</title>
+<title>TEST LETTERA 2</title>
 <style>
 body {
     margin: 0;
@@ -166,13 +166,25 @@ body {
     text-align: center;
 }
 <br>
-<p>/* Contenitore lettera */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>letterContainer</span> {<br>
-cursor: pointer;<br>
-transition: opacity 0.5s ease;<br>
+<p>/* Schermata iniziale */<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>startScreen</span> {<br>
+display: flex;<br>
+flex-direction: column;<br>
+gap: 20px;<br>
+}</p><br>
+<p>button {<br>
+padding: 18px 40px;<br>
+font-size: 22px;<br>
+border: none;<br>
+border-radius: 40px;<br>
+background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
+color: white;<br>
 }</p><br>
 <p>/* Lettera */<br>
-.letter {<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>letterContainer</span> {<br>
+display: none;<br>
+}</p><br>
+<p>.letter {<br>
 width: 260px;<br>
 height: 160px;<br>
 background: <span class='color' style='--data-color:#fff0e6'><span class='color-marker marker'>#</span>fff0e6</span>;<br>
@@ -185,11 +197,6 @@ font-style: italic;<br>
 font-size: 28px;<br>
 color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
 box-shadow: 0 5px 15px <span class='color' style='--data-color:#rgba(0,0,0,0.2)'><span class='color-marker marker'>#</span>rgba(0,0,0,0.2)</span>;<br>
-transition: transform 0.6s ease;<br>
-}</p><br>
-<p>/* Animazione apertura */<br>
-.letter.open {<br>
-transform: scale(1.15) rotate(3deg);<br>
 }</p><br>
 <p>/* Schermata successiva */<br>
 <span class='hashtag'><span class='hashtag-marker marker'>#</span>valentineContainer</span> {<br>
@@ -202,6 +209,12 @@ color: <span class='color' style='--data-color:#d6336c'><span class='color-marke
 </style></p></head>
 <body>
 <br>
+<!-- SCHERMATA INIZIALE -->
+<div id="startScreen">
+    <h1>Premi per aprire la lettera</h1>
+    <button id="openBtn">Apri</button>
+</div>
+<br>
 <!-- LETTERA -->
 <div id="letterContainer">
     <div class="letter"><i>Per Delia</i></div>
@@ -213,22 +226,22 @@ color: <span class='color' style='--data-color:#d6336c'><span class='color-marke
 </div>
 <br>
 <script>
-const letter = document.querySelector(".letter");
+const startScreen = document.getElementById("startScreen");
+const openBtn = document.getElementById("openBtn");
 const letterContainer = document.getElementById("letterContainer");
+const letter = document.querySelector(".letter");
 const valentineContainer = document.getElementById("valentineContainer");
 
-// Apertura lettera
-letterContainer.addEventListener("click", () => {
-    letter.classList.add("open");
+// Primo click: mostra la lettera
+openBtn.addEventListener("click", () => {
+    startScreen.style.display = "none";
+    letterContainer.style.display = "block";
+});
 
-    setTimeout(() => {
-        letterContainer.style.opacity = "0";
-    }, 400);
-
-    setTimeout(() => {
-        letterContainer.style.display = "none";
-        valentineContainer.style.display = "block";
-    }, 900);
+// Secondo click: apre la lettera
+letter.addEventListener("click", () => {
+    letterContainer.style.display = "none";
+    valentineContainer.style.display = "block";
 });
 </script>
 <br>
