@@ -4,10 +4,10 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="5E3CBD9D-ABB8-4C3A-9A68-99039DC500CA">
-        <meta name="created" content="2026-02-14T14:03:12+0100">
-        <meta name="modified" content="2026-02-14T14:03:15+0100">
-        <meta name="tags" content="hearts, finalScreen, no, questionScreen, yes, startScreen">
+        <meta name="bear-note-unique-identifier" content="5944A853-FA69-40A6-88AF-5E1A38622D2A">
+        <meta name="created" content="2026-02-14T14:07:02+0100">
+        <meta name="modified" content="2026-02-14T14:07:06+0100">
+        <meta name="tags" content="">
         <meta name="last device" content="iPhone">
         
         <script id="MathJax-script" async
@@ -153,106 +153,155 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Per Delia 🎀</title>
+<br>
 <style>
 body {
     margin: 0;
-    background: #ffe6ef;
+    background: linear-gradient(to bottom, #ffe6ef, #ffd6e8);
     font-family: Arial, sans-serif;
     text-align: center;
-    padding-top: 40px;
+    overflow-x: hidden;
 }
+
+.container {
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 38px;
+    color: #d6336c;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #d6336c;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#nextBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+.choice-btn {
+    width: 70%;
+    max-width: 260px;
+    margin: 15px auto;
+    display: block;
+}
+
+#yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background: #6c757d;
+    color: white;
+    position: relative;
+}
+
+.screen {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+#finalScreen img {
+    width: 260px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#hearts {
+    font-size: 30px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.show-hearts {
+    opacity: 1;
+}
+</style>
+</head>
 <br>
-<p>/* Titolo */<br>
-h1 {<br>
-font-size: 40px;<br>
-font-style: italic;<br>
-color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
-margin-bottom: 50px;<br>
-}</p><br>
-<p>/* Pulsante avanti */<br>
-button {<br>
-padding: 16px 45px;<br>
-font-size: 24px;<br>
-border: none;<br>
-border-radius: 40px;<br>
-background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
-color: white;<br>
-cursor: pointer;<br>
-margin-top: 20px;<br>
-}</p><br>
-<p>/* Schermate */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>startScreen</span>,<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>questionScreen</span>,<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>finalScreen</span> {<br>
-display: none;<br>
-}</p><br>
-<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>startScreen</span> { display: block; }</p><br>
-<p>/* Pulsanti Sì/No */<br>
-.choice-btn {<br>
-width: 70%;<br>
-max-width: 260px;<br>
-padding: 18px 0;<br>
-font-size: 26px;<br>
-border: none;<br>
-border-radius: 50px;<br>
-margin: 15px auto;<br>
-cursor: pointer;<br>
-display: block;<br>
-}</p><br>
-<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>yes</span> { background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>; color: white; }<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>no</span> { background: <span class='color' style='--data-color:#6c757d'><span class='color-marker marker'>#</span>6c757d</span>; color: white; }</p><br>
-<p>/* Cuori */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>hearts</span> {<br>
-margin-top: 40px;<br>
-font-size: 36px;<br>
-}<br>
-</style></p></head>
 <body>
+<br>
+<div class="container">
 <br>
 <p><h1>Per Delia 🎀</h1></p><br>
 <!-- SCHERMATA 1 -->
-<div id="startScreen">
+<div id="startScreen" class="screen active">
     <button id="nextBtn">Avanti ➜</button>
 </div>
 <br>
 <!-- SCHERMATA 2 -->
-<div id="questionScreen">
-    <h2 style="font-size:32px; color:#d6336c;">Would you be my Valentine? 💌</h2>
+<div id="questionScreen" class="screen">
+    <h2>Would you be my Valentine? 💌</h2>
 <br>
 <p><button class="choice-btn" id="yes">Sì 🧡</button><br>
 <button class="choice-btn" id="no">No 💔</button></p><br>
 <p><div id="hearts">❤️🧡💗💖💕</div></p></div>
 <br>
 <!-- SCHERMATA FINALE -->
-<div id="finalScreen">
-    <p style="font-size:28px; color:#d6336c;">Smack stupenda 🧡🌷 mi manchi già</p>
-    <img src="https://i.imgur.com/LVU5ZNN.gif" style="width:260px; border-radius:20px; margin-top:20px;">
+<div id="finalScreen" class="screen">
+    <p style="font-size:26px; color:#d6336c;">
+        Smack stupenda 🧡🌷 mi manchi già
+    </p>
+    <img src="https://i.imgur.com/LVU5ZNN.gif">
+</div>
+<br>
 </div>
 <br>
 <script>
 const startScreen = document.getElementById("startScreen");
 const questionScreen = document.getElementById("questionScreen");
 const finalScreen = document.getElementById("finalScreen");
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
+const hearts = document.getElementById("hearts");
 
 document.getElementById("nextBtn").addEventListener("click", () => {
-    startScreen.style.display = "none";
-    questionScreen.style.display = "block";
+    startScreen.classList.remove("active");
+    questionScreen.classList.add("active");
 });
 
-document.getElementById("yes").addEventListener("click", () => {
-    questionScreen.style.display = "none";
-    finalScreen.style.display = "block";
+yesBtn.addEventListener("click", () => {
+    hearts.classList.add("show-hearts");
+
+    setTimeout(() => {
+        questionScreen.classList.remove("active");
+        finalScreen.classList.add("active");
+    }, 800);
 });
 
-document.getElementById("no").addEventListener("click", () => {
-    alert("Oh no 💔");
-});
+// Pulsante NO che scappa su mobile
+noBtn.addEventListener("touchstart", moveButton);
+noBtn.addEventListener("mouseover", moveButton);
+
+function moveButton() {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
 </script>
 <br>
 </body>
 </html>
-
         </div>
     </body>
 </html>
