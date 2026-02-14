@@ -4,10 +4,10 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="EAC54EF8-2E60-4389-A8AE-91C6AA4D5057">
-        <meta name="created" content="2026-02-14T13:51:44+0100">
-        <meta name="modified" content="2026-02-14T13:51:49+0100">
-        <meta name="tags" content="letterContainer, noBtn, valentineContainer, yesBtn">
+        <meta name="bear-note-unique-identifier" content="3C5859A3-07AB-4A58-BCC5-71C2B42196C5">
+        <meta name="created" content="2026-02-14T13:56:51+0100">
+        <meta name="modified" content="2026-02-14T13:56:54+0100">
+        <meta name="tags" content="hearts, no, yes, valentine, finalMessage">
         <meta name="last device" content="iPhone">
         
         <script id="MathJax-script" async
@@ -153,264 +153,111 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>Per Delia ❤️</title>
+<title>Per Delia 🎀</title>
 <style>
 body {
     margin: 0;
-    background: linear-gradient(135deg, #ffd6e0, #ffe6eb);
+    background: #ffe6ef;
     font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    overflow: hidden;
+    padding-top: 40px;
 }
 <br>
-<p>/* LETTERA ROMANTICA */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>letterContainer</span> {<br>
-cursor: pointer;<br>
-transition: opacity 0.5s ease;<br>
-}</p><br>
-<p>.letter {<br>
-width: 260px;<br>
-height: 170px;<br>
-background: <span class='color' style='--data-color:#fff0f3'><span class='color-marker marker'>#</span>fff0f3</span>;<br>
-border: 3px solid <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
-border-radius: 18px;<br>
-display: flex;<br>
-align-items: center;<br>
-justify-content: center;<br>
+<p>/* Titolo */<br>
+h1 {<br>
+font-size: 40px;<br>
 font-style: italic;<br>
-font-size: 30px;<br>
 color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
-position: relative;<br>
-box-shadow: 0 6px 18px <span class='color' style='--data-color:#rgba(0,0,0,0.2)'><span class='color-marker marker'>#</span>rgba(0,0,0,0.2)</span>;<br>
-transition: transform 0.6s ease;<br>
+margin-bottom: 50px;<br>
 }</p><br>
-<p>/* Cuoricino nell’angolo */<br>
-.letter::after {<br>
-content: "❤️";<br>
-position: absolute;<br>
-top: 8px;<br>
-right: 12px;<br>
-font-size: 22px;<br>
-}</p><br>
-<p>/* Animazione apertura */<br>
-.letter.open {<br>
-transform: scale(1.15) rotate(3deg);<br>
-}</p><br>
-<p>/* SCHERMATA VALENTINE */<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>valentineContainer</span> {<br>
-display: none;<br>
-}</p><br>
-<p>h1 {<br>
-font-size: 34px;<br>
-color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
-}</p><br>
-<p>button {<br>
-padding: 18px 40px;<br>
+<p>/* Pulsante avanti */<br>
+button {<br>
+padding: 15px 40px;<br>
 font-size: 22px;<br>
 border: none;<br>
 border-radius: 40px;<br>
-margin: 20px;<br>
+background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
+color: white;<br>
 cursor: pointer;<br>
-transition: transform 0.3s ease;<br>
+margin-top: 20px;<br>
 }</p><br>
-<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>yesBtn</span> { background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>; color: white; }<br>
-<span class='hashtag'><span class='hashtag-marker marker'>#</span>noBtn</span> { background: <span class='color' style='--data-color:#6c757d'><span class='color-marker marker'>#</span>6c757d</span>; color: white; }</p><br>
+<p>/* Contenitore Valentine */<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>valentine</span> {<br>
+display: none;<br>
+}</p><br>
+<p>/* Testo domanda */<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>valentine</span> h2 {<br>
+font-size: 32px;<br>
+color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
+margin-bottom: 40px;<br>
+}</p><br>
+<p>/* Pulsanti SI / NO */<br>
+.choice-btn {<br>
+padding: 18px 45px;<br>
+font-size: 24px;<br>
+border: none;<br>
+border-radius: 50px;<br>
+margin: 15px;<br>
+cursor: pointer;<br>
+}</p><br>
+<p><span class='hashtag'><span class='hashtag-marker marker'>#</span>yes</span> { background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>; color: white; }<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>no</span> { background: <span class='color' style='--data-color:#6c757d'><span class='color-marker marker'>#</span>6c757d</span>; color: white; }</p><br>
 <p>/* Cuori */<br>
-.heart {<br>
-position: absolute;<br>
-pointer-events: none;<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>hearts</span> {<br>
+margin-top: 40px;<br>
+font-size: 36px;<br>
 }</p><br>
-<p>/* Glitter */<br>
-.glitter {<br>
-position: absolute;<br>
-width: 6px;<br>
-height: 6px;<br>
-background: radial-gradient(circle, white, gold);<br>
-border-radius: 50%;<br>
-opacity: 0.9;<br>
-pointer-events: none;<br>
-}</p><br>
-<p>/* Shake pulsante NO */<br>
-@keyframes shake {<br>
-0% { transform: translateX(0); }<br>
-20% { transform: translateX(-8px); }<br>
-40% { transform: translateX(8px); }<br>
-60% { transform: translateX(-6px); }<br>
-80% { transform: translateX(6px); }<br>
-100% { transform: translateX(0); }<br>
-}</p><br>
-<p>.shake {<br>
-animation: shake 0.4s ease;<br>
-}</p><br>
-<p>/* Shake schermo */<br>
-@keyframes screenShake {<br>
-0% { transform: translate(0, 0); }<br>
-20% { transform: translate(-10px, 5px); }<br>
-40% { transform: translate(10px, -5px); }<br>
-60% { transform: translate(-8px, 4px); }<br>
-80% { transform: translate(8px, -4px); }<br>
-100% { transform: translate(0, 0); }<br>
-}</p><br>
-<p>.screen-shake {<br>
-animation: screenShake 0.4s ease;<br>
+<p>/* Messaggio finale */<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>finalMessage</span> {<br>
+display: none;<br>
+margin-top: 40px;<br>
+font-size: 28px;<br>
+color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
 }<br>
 </style></p></head>
 <body>
 <br>
-<!-- LETTERA -->
-<div id="letterContainer">
-    <div class="letter"><i>Per Delia</i></div>
+<p><h1>Per Delia 🎀</h1></p><br>
+<!-- SCHERMATA 1 -->
+<div id="start">
+    <button id="nextBtn">Avanti ➜</button>
 </div>
 <br>
-<!-- SCHERMATA VALENTINE -->
-<div id="valentineContainer">
-    <h1>Would you be my Valentine? 💌</h1>
-    <button id="yesBtn">Yes 🧡</button>
-    <button id="noBtn">No 💔</button>
-    <div id="messageContainer"></div>
+<!-- SCHERMATA 2 -->
+<div id="valentine">
+    <h2>Would you be my Valentine? 💌</h2>
+<br>
+<p><button class="choice-btn" id="yes">Sì 🧡</button><br>
+<button class="choice-btn" id="no">No 💔</button></p><br>
+<p><div id="hearts">❤️🧡💗💖💕</div></p></div>
+<br>
+<!-- MESSAGGIO FINALE -->
+<div id="finalMessage">
+    <p>Smack stupenda 🧡🌷 mi manchi già</p>
+    <img src="https://i.imgur.com/LVU5ZNN.gif" style="width:260px; border-radius:20px; margin-top:20px;">
 </div>
 <br>
 <script>
-const letter = document.querySelector(".letter");
-const letterContainer = document.getElementById("letterContainer");
-const valentineContainer = document.getElementById("valentineContainer");
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const messageContainer = document.getElementById("messageContainer");
+const nextBtn = document.getElementById("nextBtn");
+const start = document.getElementById("start");
+const valentine = document.getElementById("valentine");
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
+const finalMessage = document.getElementById("finalMessage");
 
-let noClicks = 0;
-
-/* Apertura lettera */
-letterContainer.addEventListener("click", () => {
-    letter.classList.add("open");
-
-    setTimeout(() => {
-        letterContainer.style.opacity = "0";
-    }, 400);
-
-    setTimeout(() => {
-        letterContainer.style.display = "none";
-        valentineContainer.style.display = "block";
-    }, 900);
+nextBtn.addEventListener("click", () => {
+    start.style.display = "none";
+    valentine.style.display = "block";
 });
 
-/* NO */
-noBtn.addEventListener("click", () => {
-    noClicks++;
-
-    noBtn.classList.add("shake");
-    setTimeout(() => noBtn.classList.remove("shake"), 400);
-
-    document.body.classList.add("screen-shake");
-    setTimeout(() => document.body.classList.remove("screen-shake"), 400);
-
-    yesBtn.style.transform = `scale(${1 + noClicks * 0.25})`;
-    noBtn.style.transform = `scale(${Math.max(0.4, 1 - noClicks * 0.15)})`;
-
-    if (noClicks >= 5) noBtn.style.display = "none";
-});
-
-/* YES */
 yesBtn.addEventListener("click", () => {
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-
-    messageContainer.innerHTML = `
-        <div>Smack Stupenda 🧡🌷 mi manchi già</div>
-        <img src="https://i.imgur.com/LVU5ZNN.gif" style="width:260px; margin-top:20px; border-radius:20px;">
-    `;
-
-    startHearts();
-    explodeHearts();
-    startGlitter();
+    valentine.style.display = "none";
+    finalMessage.style.display = "block";
 });
 
-/* Cuori che salgono */
-function startHearts() {
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.textContent = "❤️";
-        heart.style.left = Math.random() * window.innerWidth + "px";
-        heart.style.top = window.innerHeight + "px";
-        heart.style.fontSize = (20 + Math.random() * 20) + "px";
-        document.body.appendChild(heart);
-
-        let pos = window.innerHeight;
-        const speed = 2 + Math.random() * 2;
-
-        function float() {
-            pos -= speed;
-            heart.style.top = pos + "px";
-            if (pos > -50) requestAnimationFrame(float);
-            else heart.remove();
-        }
-        requestAnimationFrame(float);
-    }, 300);
-}
-
-/* Cuori esplosivi */
-function explodeHearts() {
-    for (let i = 0; i < 25; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.textContent = ["💙", "🧡"][Math.floor(Math.random() * 2)];
-        heart.style.left = window.innerWidth / 2 + "px";
-        heart.style.top = window.innerHeight / 2 + "px";
-        heart.style.fontSize = (20 + Math.random() * 25) + "px";
-        document.body.appendChild(heart);
-
-        const angle = Math.random() * 2 * Math.PI;
-        const distance = 120 + Math.random() * 120;
-        const speed = 3 + Math.random() * 3;
-        let traveled = 0;
-        let x = window.innerWidth / 2;
-        let y = window.innerHeight / 2;
-
-        function boom() {
-            const dx = Math.cos(angle) * speed;
-            const dy = Math.sin(angle) * speed;
-            x += dx;
-            y += dy;
-            traveled += Math.sqrt(dx*dx + dy*dy);
-
-            heart.style.left = x + "px";
-            heart.style.top = y + "px";
-
-            if (traveled < distance) requestAnimationFrame(boom);
-            else heart.remove();
-        }
-        requestAnimationFrame(boom);
-    }
-}
-
-/* Glitter */
-function startGlitter() {
-    setInterval(() => {
-        const glitter = document.createElement("div");
-        glitter.className = "glitter";
-        glitter.style.left = Math.random() * window.innerWidth + "px";
-        glitter.style.top = "-10px";
-        glitter.style.opacity = (0.4 + Math.random() * 0.6).toString();
-        glitter.style.transform = `scale(${0.5 + Math.random()})`;
-        document.body.appendChild(glitter);
-
-        let pos = -10;
-        const speed = 2 + Math.random() * 3;
-
-        function fall() {
-            pos += speed;
-            glitter.style.top = pos + "px";
-            if (pos < window.innerHeight + 20) requestAnimationFrame(fall);
-            else glitter.remove();
-        }
-        requestAnimationFrame(fall);
-    }, 150);
-}
+noBtn.addEventListener("click", () => {
+    alert("Oh no 💔");
+});
 </script>
 <br>
 </body>
