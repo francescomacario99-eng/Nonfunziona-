@@ -4,9 +4,9 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="41275986-0E47-4CC4-8A66-E15EEB45781A">
-        <meta name="created" content="2026-02-14T13:44:53+0100">
-        <meta name="modified" content="2026-02-14T13:44:59+0100">
+        <meta name="bear-note-unique-identifier" content="35EAFD81-071F-48B8-91DE-95199770FC2C">
+        <meta name="created" content="2026-02-14T13:48:04+0100">
+        <meta name="modified" content="2026-02-14T13:48:10+0100">
         <meta name="tags" content="startScreen, letterContainer, valentineContainer">
         <meta name="last device" content="iPhone">
         
@@ -153,7 +153,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>TEST LETTERA 2</title>
+<title>TEST LETTERA 3</title>
 <style>
 body {
     margin: 0;
@@ -161,9 +161,11 @@ body {
     font-family: Arial, sans-serif;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
+    padding-top: 60px;
 }
 <br>
 <p>/* Schermata iniziale */<br>
@@ -180,9 +182,10 @@ border-radius: 40px;<br>
 background: <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
 color: white;<br>
 }</p><br>
-<p>/* Lettera */<br>
+<p>/* Lettera <i>/<br>
 <span class='hashtag'><span class='hashtag-marker marker'>#</span>letterContainer</span> {<br>
 display: none;<br>
+margin-top: 80px; /</i> <-- QUI LA MAGIA */<br>
 }</p><br>
 <p>.letter {<br>
 width: 260px;<br>
@@ -201,6 +204,7 @@ box-shadow: 0 5px 15px <span class='color' style='--data-color:#rgba(0,0,0,0.2)'
 <p>/* Schermata successiva */<br>
 <span class='hashtag'><span class='hashtag-marker marker'>#</span>valentineContainer</span> {<br>
 display: none;<br>
+margin-top: 100px;<br>
 }</p><br>
 <p>h1 {<br>
 font-size: 34px;<br>
