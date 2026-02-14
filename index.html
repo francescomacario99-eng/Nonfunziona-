@@ -4,9 +4,9 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="851A95FE-C213-4644-9AFC-6E9E09A7824A">
-        <meta name="created" content="2026-02-14T14:16:20+0100">
-        <meta name="modified" content="2026-02-14T14:16:24+0100">
+        <meta name="bear-note-unique-identifier" content="ECAB6188-DE19-4884-92A4-9D1AA36462E4">
+        <meta name="created" content="2026-02-14T14:19:31+0100">
+        <meta name="modified" content="2026-02-14T14:19:35+0100">
         <meta name="tags" content="">
         <meta name="last device" content="iPhone">
         
@@ -162,7 +162,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 h1 {
@@ -189,6 +189,30 @@ button {
 #noBtn {
     background-color: #6c757d;
     color: white;
+    position: absolute;
+}
+
+.floating {
+    position: absolute;
+    font-size: 20px;
+    animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+
+.glitter {
+    position: absolute;
+    font-size: 14px;
+    animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.5); }
 }
 </style>
 </head>
@@ -199,21 +223,24 @@ button {
 <p><button id="yesBtn">Sì 🧡</button><br>
 <button id="noBtn">No 💔</button></p><br>
 <script>
-let noClicks = 0;
 let yesBtn = document.getElementById("yesBtn");
 let noBtn = document.getElementById("noBtn");
 
-noBtn.addEventListener("click", function() {
-    noClicks++;
-    yesBtn.style.transform = "scale(" + (1 + noClicks * 0.2) + ")";
-    noBtn.style.transform = "scale(" + (1 - noClicks * 0.1) + ")";
+function moveButton() {
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
 
-    if (noClicks >= 5) {
-        noBtn.style.display = "none";
-    }
-});
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+}
+
+noBtn.addEventListener("touchstart", moveButton);
+noBtn.addEventListener("mouseover", moveButton);
 
 yesBtn.addEventListener("click", function() {
+
     document.body.innerHTML = `
         <div style="margin-top:120px;font-size:34px;color:#d6336c;">
             Smack stupenda 🧡🌷<br>mi manchi già
@@ -221,13 +248,38 @@ yesBtn.addEventListener("click", function() {
         <img src="https://i.imgur.com/LVU5ZNN.gif"
              style="width:260px;margin-top:30px;border-radius:20px;">
     `;
+
+    startHearts();
+    startGlitter();
 });
+
+function startHearts() {
+    setInterval(function() {
+        let heart = document.createElement("div");
+        heart.classList.add("floating");
+        heart.innerHTML = "🧡";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+    }, 300);
+}
+
+function startGlitter() {
+    setInterval(function() {
+        let sparkle = document.createElement("div");
+        sparkle.classList.add("glitter");
+        sparkle.innerHTML = "✨";
+        sparkle.style.left = Math.random() * 100 + "vw";
+        sparkle.style.top = Math.random() * 100 + "vh";
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 3000);
+    }, 200);
+}
 </script>
 <br>
 </body>
 </html>
-<br>
-
         </div>
     </body>
 </html>
