@@ -4,9 +4,9 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="CBBFC775-4E07-4BC6-AB9E-6A53A6CF2DA4">
-        <meta name="created" content="2026-02-14T14:11:07+0100">
-        <meta name="modified" content="2026-02-14T14:11:10+0100">
+        <meta name="bear-note-unique-identifier" content="851A95FE-C213-4644-9AFC-6E9E09A7824A">
+        <meta name="created" content="2026-02-14T14:16:20+0100">
+        <meta name="modified" content="2026-02-14T14:16:24+0100">
         <meta name="tags" content="">
         <meta name="last device" content="iPhone">
         
@@ -158,67 +158,76 @@
 <br>
 <style>
 body {
-    margin:0;
+    background: linear-gradient(135deg, #ffd6e0, #ffe6eb);
     font-family: Arial, sans-serif;
-    background:#ffe6ef;
-    text-align:center;
-    padding:40px 20px;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 120px;
+    font-size: 34px;
+    color: #d6336c;
 }
 
 button {
-    padding:15px 40px;
-    font-size:22px;
-    border:none;
-    border-radius:40px;
-    margin:15px;
-    cursor:pointer;
+    padding: 15px 35px;
+    font-size: 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-#yes { background:#ff4d6d; color:white; }
-#no { background:#6c757d; color:white; }
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+}
 
+#noBtn {
+    background-color: #6c757d;
+    color: white;
+}
 </style>
 </head>
+<br>
 <body>
 <br>
-<p><h1>Per Delia 🎀</h1></p><br>
-<div id="start">
-    <button onclick="next()">Avanti ➜</button>
-</div>
-<br>
-<div id="question" hidden>
-    <h2>Would you be my Valentine? 💌</h2>
-    <button id="yes" onclick="yes()">Sì 🧡</button>
-    <button id="no" onmouseover="move()" ontouchstart="move()">No 💔</button>
-</div>
-<br>
-<div id="final" hidden>
-    <p style="font-size:24px;color:#d6336c;">
-        Smack stupenda 🧡🌷 mi manchi già
-    </p>
-</div>
-<br>
+<p><h1>Per Delia 🎀<br><br>Would you be my Valentine? 💌</h1></p><br>
+<p><button id="yesBtn">Sì 🧡</button><br>
+<button id="noBtn">No 💔</button></p><br>
 <script>
-function next(){
-    document.getElementById("start").hidden = true;
-    document.getElementById("question").hidden = false;
-}
+let noClicks = 0;
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
 
-function yes(){
-    document.getElementById("question").hidden = true;
-    document.getElementById("final").hidden = false;
-}
+noBtn.addEventListener("click", function() {
+    noClicks++;
+    yesBtn.style.transform = "scale(" + (1 + noClicks * 0.2) + ")";
+    noBtn.style.transform = "scale(" + (1 - noClicks * 0.1) + ")";
 
-function move(){
-    const btn = document.getElementById("no");
-    btn.style.position = "relative";
-    btn.style.left = (Math.random()*200-100)+"px";
-    btn.style.top = (Math.random()*200-100)+"px";
-}
+    if (noClicks >= 5) {
+        noBtn.style.display = "none";
+    }
+});
+
+yesBtn.addEventListener("click", function() {
+    document.body.innerHTML = `
+        <div style="margin-top:120px;font-size:34px;color:#d6336c;">
+            Smack stupenda 🧡🌷<br>mi manchi già
+        </div>
+        <img src="https://i.imgur.com/LVU5ZNN.gif"
+             style="width:260px;margin-top:30px;border-radius:20px;">
+    `;
+});
 </script>
 <br>
 </body>
 </html>
+<br>
+
         </div>
     </body>
 </html>
