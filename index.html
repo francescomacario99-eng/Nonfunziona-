@@ -4,10 +4,10 @@
         <title><!DOCTYPE html></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="bear-note-unique-identifier" content="331DE0E5-C310-4380-A7FF-74E0D25C5A2D">
-        <meta name="created" content="2026-02-14T13:39:41+0100">
-        <meta name="modified" content="2026-02-14T13:39:46+0100">
-        <meta name="tags" content="">
+        <meta name="bear-note-unique-identifier" content="D8D6AA28-6D9D-4F9A-A1AB-5A59D3FD190B">
+        <meta name="created" content="2026-02-14T13:42:08+0100">
+        <meta name="modified" content="2026-02-14T13:42:13+0100">
+        <meta name="tags" content="letterContainer, valentineContainer">
         <meta name="last device" content="iPhone">
         
         <script id="MathJax-script" async
@@ -153,27 +153,85 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<title>TEST VERSIONE</title>
+<title>TEST LETTERA</title>
 <style>
 body {
     margin: 0;
-    background: #ffb3c6;
+    background: linear-gradient(135deg, #ffd6e0, #ffe6eb);
+    font-family: Arial, sans-serif;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
+    text-align: center;
 }
 <br>
+<p>/* Contenitore lettera */<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>letterContainer</span> {<br>
+cursor: pointer;<br>
+transition: opacity 0.5s ease;<br>
+}</p><br>
+<p>/* Lettera */<br>
+.letter {<br>
+width: 260px;<br>
+height: 160px;<br>
+background: <span class='color' style='--data-color:#fff0e6'><span class='color-marker marker'>#</span>fff0e6</span>;<br>
+border: 2px solid <span class='color' style='--data-color:#ff4d6d'><span class='color-marker marker'>#</span>ff4d6d</span>;<br>
+border-radius: 15px;<br>
+display: flex;<br>
+align-items: center;<br>
+justify-content: center;<br>
+font-style: italic;<br>
+font-size: 28px;<br>
+color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
+box-shadow: 0 5px 15px <span class='color' style='--data-color:#rgba(0,0,0,0.2)'><span class='color-marker marker'>#</span>rgba(0,0,0,0.2)</span>;<br>
+transition: transform 0.6s ease;<br>
+}</p><br>
+<p>/* Animazione apertura */<br>
+.letter.open {<br>
+transform: scale(1.15) rotate(3deg);<br>
+}</p><br>
+<p>/* Schermata successiva */<br>
+<span class='hashtag'><span class='hashtag-marker marker'>#</span>valentineContainer</span> {<br>
+display: none;<br>
+}</p><br>
 <p>h1 {<br>
-font-size: 48px;<br>
-color: <span class='color' style='--data-color:#d1004b'><span class='color-marker marker'>#</span>d1004b</span>;<br>
-text-align: center;<br>
+font-size: 34px;<br>
+color: <span class='color' style='--data-color:#d6336c'><span class='color-marker marker'>#</span>d6336c</span>;<br>
 }<br>
 </style></p></head>
 <body>
 <br>
-<p><h1>VERSIONE TEST 1<br>SE LA VEDI FUNZIONA</h1></p><br>
+<!-- LETTERA -->
+<div id="letterContainer">
+    <div class="letter"><i>Per Delia</i></div>
+</div>
+<br>
+<!-- SCHERMATA SUCCESSIVA -->
+<div id="valentineContainer">
+    <h1>LETTERA APERTA — FUNZIONA ✔️</h1>
+</div>
+<br>
+<script>
+const letter = document.querySelector(".letter");
+const letterContainer = document.getElementById("letterContainer");
+const valentineContainer = document.getElementById("valentineContainer");
+
+// Apertura lettera
+letterContainer.addEventListener("click", () => {
+    letter.classList.add("open");
+
+    setTimeout(() => {
+        letterContainer.style.opacity = "0";
+    }, 400);
+
+    setTimeout(() => {
+        letterContainer.style.display = "none";
+        valentineContainer.style.display = "block";
+    }, 900);
+});
+</script>
+<br>
 </body>
 </html>
 
